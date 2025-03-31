@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "./",
+  base: '/', // Change to root path
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
@@ -27,6 +27,10 @@ export default defineConfig({
   server: {
     host: true, // Needed for Vercel deployment
     port: 5173, // Default Vercel port
+    middlewareMode: true
+  },
+  preview: {
+    port: 5173
   },
   define: {
     'process.env': process.env // Forward environment variables

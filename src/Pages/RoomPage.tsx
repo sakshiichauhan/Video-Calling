@@ -33,12 +33,7 @@ function Room() {
       sharedLinks: [
         {
           name: "Video Call Link",
-          url:
-            window.location.protocol +
-            "//" +
-            window.location.host +
-            window.location.pathname +
-            "?type=" + encodeURIComponent(type),
+          url: window.location.origin + `/room/${roomId}?type=${encodeURIComponent(type)}`,
         },
       ],
       scenario: {
